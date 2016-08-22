@@ -1,0 +1,5 @@
+require 'rspec'
+require 'page-object'
+require 'faker'
+require 'rest-client'
+require 'pry'
