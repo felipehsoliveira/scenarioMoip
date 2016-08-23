@@ -1,4 +1,4 @@
-<h1>Cenarios Moip API</h1>
+<h1>Cenários Moip API</h1>
 
 
 <h2>Dependências</h2>
@@ -39,10 +39,10 @@
   <p>Essa feature foi desenvolvida com o proposito de testar as funcionalidades de  criar um pagamento, consultar um pagamento, capturar um e cancelar um pagamento pré-autorizado.</p>
 <h5>Tags</h5>
   <ul>
-    <li>@tag: Executa o cenario de teste correspondente a criação de clientes.</li>
-    <li>@tag: Executa o cenario de teste correspondente a consuta de um cliente já cadastrado.</li>
-    <li>@tag: Executa o cenario de teste correspondente a adição de um cartão de crédito a um usuário já cadastrado.</li>
-    <li>@tag:</li>
+    <li>@payment: Executa o cenario de teste correspondente a criação de um pagamento.</li>
+    <li>@getPayment: Executa o cenario de teste correspondente a consuta de um pagamento cadastrado.</li>
+    <li>@postPreAuthorized: Executa o cenario de teste correspondente a captura de um pagamento pré-autorizado.</li>
+    <li>@postCPreAuthorized: Executa o cenario de teste correspondente ao cancelamento de um pagamento pré-autorizado</li>
   </ul>
 
 <h2>Tags Adicionais</h2>
