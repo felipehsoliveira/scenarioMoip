@@ -1,13 +1,13 @@
 Feature: Teste de Clientes
 
-@client @h2
+@customer @h2
 Scenario: cadastro de cliente
 
 Given que o endpoint "v2/customers" esta retornando "200"
 When eu faço um post para a criacao de um cliente
 Then espero que a criacao do cliente retorne "201" e salve o resultado no arquivo "clientResponse.txt"
 
-@checkClient @h1
+@checkCustomer @h1
 Scenario: consulta de cliente cadastrado
 
 Given que o endpoint "v2/customers" esta retornando "200"

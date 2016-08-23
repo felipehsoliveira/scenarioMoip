@@ -63,3 +63,39 @@ end
 
 
 #pagamentos
+
+#postPayment
+When(/^eu faço um post para a criacao de um pagamento$/) do
+  Payment.new.postPayment
+end
+
+Then(/^espero que a resposta da acao retorne o codigo "([^"]*)" e salve o resultado em "([^"]*)"$/) do |code, file|
+  Payment.new.parse_Json(code, file)
+end
+
+#getPayment
+When(/^Eu faço um get para a consulta de um pagamento$/) do
+  Payment.new.getPayment
+end
+
+Then(/^espero que a resposta da consulta seja o codigo "([^"]*)" e salve o resultado em "([^"]*)"$/) do |code, file|
+  Payemnt.new.parse_Json(code, file)
+end
+
+#getPreAuthorized
+When(/^Eu faço um post para a consulta de um pagamento pré\-autorizado$/) do
+  Payment.new.capturePayment
+end
+
+Then(/^espero que a resposta da consulta seja o codigo "([^"]*)" e salve o resultado em "([^"]*)"$/) do |code, file|
+  Payment.new.parse_Json(code, file)
+end
+
+#cancelPreAuthorized
+When(/^Eu faço um post para o cancelamento de um pagamento pré\-autorizado$/) do
+  Payment.new.cancelPayment
+end
+
+Then(/^Eu espero que a resposta da acao seja o codigo "([^"]*)" e salve o resultado em "([^"]*)"$/) do |code, file|
+  Payment.new.parse_Json(code, file)
+end

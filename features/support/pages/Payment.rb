@@ -1,12 +1,26 @@
 class Payment
 
-  def order_payment
+  def postPayment
     values
-    binding.pry
     $response = RestClient.post $url + @endpoint, @val, $headers
   end
 
-  def parse_Json(code)
+  def getPayment
+    values
+    $response = RestClient.get $url + @endpoint + @id, $headers
+  end
+
+  def capturePayment
+    values
+    $response = RestClient.post $url + @endpoint + @idCap, $headers
+  end
+
+  def cancelPayment
+    values
+    $response = RestClient.post $url + @endpoint + @idCap, $headers
+  end
+
+  def parse_Json(code,file)
     #binding.pry
     if $response.code == code.to_i
       $response = JSON.parse($response)
@@ -18,14 +32,17 @@ class Payment
     $response.each do |x|
       variable += "#{x.to_s}: #{x[0].to_s}\n"
     end
-    File.open('./data/paymentResponse.txt' , 'w') do |arg1|
+    File.open("./data/#{file}" , 'a') do |arg1|
       arg1 << variable
+      arg1 << "\n\n"
     end
   end
 
   private
   def values
-    @endpoint = "v2/orders/#{$order_id}/payments"
+    @endpoint = "v2/payments"
+    @id = "/PAY-VZ1HI48256ZX"
+    @idCap = "PAY-ZJOE0VPNGIM5/capture"
     @val = "{'installmentCount': 1,
     fundingInstrument: {
         'method': 'CREDIT_CARD',

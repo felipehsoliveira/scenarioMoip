@@ -1,4 +1,4 @@
-Feature: Teste dos Pedidos
+Feature: Teste dos Pedidos Api Moip
 
 @order @h1
 
@@ -20,5 +20,5 @@ Then espero que a consulta retorne o codigo de resposta "200" e salve o resultad
 Scenario: Listar todos os pedidos do endpoint order/v2
 
 Given que o endpoint "v2/orders" esta retornando "200"
-When Eu faco uma consulta get de "q=a&limite=10" um pedido
+When Eu faco uma consulta get de "q=a&limit=10" um pedido
 Then espero que a consulta retorne todos os pedidos e o codigo "200" e salvo no arquivo "orderList.txt"
