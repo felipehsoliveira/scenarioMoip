@@ -4,21 +4,21 @@ Feature: Teste dos Pedidos Api Moip
 
 Scenario: Criar um pedido no endpoint order/v2
 
-Given que o endpoint "v2/orders" esta retornando "200"
-When eu faço uma requisicao post para a criacao de um pedido
-Then espero que a requisicao retorne "201" e salve o retorno em "orderReponse.txt"
+Given the endpoint "v2/orders" is returning "200"
+When I make a post request for the creation of a new order
+Then I hope that request returns "201" and save the return in "orderReponse.txt"
 
 @checkOrder @h1
 
-Scenario: Verificar o pedido criado no endpoint order/v2
+Scenario: Check the order created in order endpoint/v2
 
-Given que o endpoint "v2/orders" esta retornando "200"
-When Eu faco uma consulta get para a criacao de um pedido
-Then espero que a consulta retorne o codigo de resposta "200" e salve o resultado da busca em "checkOrder.txt"
+Given the endpoint "v2/orders" is returning "200"
+When I do get an appointment to check a order
+Then I hope that the query returns the response code "200" and save the search results in "checkOrder.txt"
 
 @getOrderList @h1
-Scenario: Listar todos os pedidos do endpoint order/v2
+Scenario: List all orders from the endpoint v2/orders
 
-Given que o endpoint "v2/orders" esta retornando "200"
-When Eu faco uma consulta get de "q=a&limit=10" um pedido
-Then espero que a consulta retorne todos os pedidos e o codigo "200" e salvo no arquivo "orderList.txt"
+Given the endpoint "v2/orders" is returning "200"
+When I do a get query "that & limit = 10" to list the orders
+Then I hope that the query returns the code "200" and save the results in the file "orderList.txt"

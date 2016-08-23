@@ -40,6 +40,7 @@ class Payment
 
   private
   def values
+    @teste = "https://sandbox.moip.com.br/v2/payments/PAY-VZ1HI48256ZX"
     @endpoint = "v2/payments"
     @id = "/PAY-VZ1HI48256ZX"
     @idCap = "PAY-ZJOE0VPNGIM5/capture"

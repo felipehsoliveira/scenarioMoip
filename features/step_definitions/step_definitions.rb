@@ -1,5 +1,5 @@
 #cliente/pedido/pagamento
-Given(/^que o endpoint "([^"]*)" esta retornando "([^"]*)"$/) do |endpoint, code|
+Given(/^the endpoint "([^"]*)" is returning "([^"]*)"$/) do |endpoint, code|
   response = RestClient.get $url + endpoint, $headers
   if response.code == code.to_i
     puts "Code pass"
@@ -8,56 +8,56 @@ Given(/^que o endpoint "([^"]*)" esta retornando "([^"]*)"$/) do |endpoint, code
   end
 end
 #cadastro postCliente
-When(/^eu faço um post para a criacao de um cliente$/) do
+When(/^I do a post fo the creation of a customer$/) do
   Customer.new.customer_create
 end
 
-Then(/^espero que a criacao do cliente retorne "([^"]*)" e salve o resultado no arquivo "([^"]*)"$/) do |code, file|
+Then(/^I hope the creation return "([^"]*)" and save the resulting file in "([^"]*)"$/) do |code, file|
   Customer.new.parse_Json(code, file)
 end
 #getCliente
-When(/^eu faco um get para a consulta de um cliente cadastrado$/) do
+When(/^I do a get for the query from a client$/) do
   Customer.new.customer_check
 end
 
-Then(/^espero que a consulta retorne o codigo "([^"]*)" e salve o resultado da consulta em "([^"]*)"$/) do |code, file|
+Then(/^I hope that the query returns the code "([^"]*)" and save the query result in "([^"]*)"$/) do |code, file|
   Customer.new.parse_Json(code, file)
 end
 
 #postCartaoCliente
-When(/^Eu faco um post para o cadastro de um cartao a um cliente$/) do
+When(/^I do a post for the registration of a card to a customer$/) do
   Customer.new.add_card
 end
 
-Then(/^espero que o cadastro  retorne o codigo "([^"]*)" e salve o resultado em "([^"]*)"$/) do |code, file|
+Then(/^I hope the registry returns the code "([^"]*)" and save the results in "([^"]*)"$/) do |code, file|
   Customer.new.parse_Json(code,file)
 end
 
 #postPedido
-When(/^eu faço uma requisicao post para a criacao de um pedido$/) do
+When(/^I make a post request for the creation of a new order$/) do
   Order.new.order_create
 end
 
-Then(/^espero que a requisicao retorne "([^"]*)" e salve o retorno em "([^"]*)"$/) do |code, file|
+Then(/^I hope that request returns "([^"]*)" and save the return in "([^"]*)"$/) do |code, file|
   Order.new.parse_Json(code,file)
 end
 
 #getPedido
-When(/^Eu faco uma consulta get para a criacao de um pedido$/) do
+When(/^I do get an appointment to check a order$/) do
   Order.new.check_order
 end
 
-Then(/^espero que a consulta retorne o codigo de resposta "([^"]*)" e salve o resultado da busca em "([^"]*)"$/) do |code, file|
+Then(/^I hope that the query returns the response code "([^"]*)" and save the search results in "([^"]*)"$/) do |code, file|
   Order.new.parse_Json(code, file)
 end
 
 #getOrderList
 
-When(/^Eu faco uma consulta get de "([^"]*)" um pedido$/) do |query|
+When(/^I do a get query "([^"]*)" to list the orders$/) do |query|
   Order.new.getOrderList(query)
 end
 
-Then(/^espero que a consulta retorne todos os pedidos e o codigo "([^"]*)" e salvo no arquivo "([^"]*)"$/) do |code , file|
+Then(/^I hope that the query returns the code "([^"]*)" and save the results in the file "([^"]*)"$/) do |code , file|
   Order.new.parse_Json(code, file)
 end
 
@@ -65,37 +65,25 @@ end
 #pagamentos
 
 #postPayment
-When(/^eu faço um post para a criacao de um pagamento$/) do
+When(/^I do a post to create a payment$/) do
   Payment.new.postPayment
 end
 
-Then(/^espero que a resposta da acao retorne o codigo "([^"]*)" e salve o resultado em "([^"]*)"$/) do |code, file|
-  Payment.new.parse_Json(code, file)
-end
-
 #getPayment
-When(/^Eu faço um get para a consulta de um pagamento$/) do
+When(/^I do a get for consulting a payment$/) do
   Payment.new.getPayment
 end
 
-Then(/^espero que a resposta da consulta seja o codigo "([^"]*)" e salve o resultado em "([^"]*)"$/) do |code, file|
-  Payemnt.new.parse_Json(code, file)
-end
-
 #getPreAuthorized
-When(/^Eu faço um post para a consulta de um pagamento pré\-autorizado$/) do
+When(/^I do a post for consulting a pre authorized payment$/) do
   Payment.new.capturePayment
 end
 
-Then(/^espero que a resposta da consulta seja o codigo "([^"]*)" e salve o resultado em "([^"]*)"$/) do |code, file|
-  Payment.new.parse_Json(code, file)
-end
-
 #cancelPreAuthorized
-When(/^Eu faço um post para o cancelamento de um pagamento pré\-autorizado$/) do
+When(/^I make a post to the cancellation of a pre authorized payment$/) do
   Payment.new.cancelPayment
 end
 
-Then(/^Eu espero que a resposta da acao seja o codigo "([^"]*)" e salve o resultado em "([^"]*)"$/) do |code, file|
+Then(/^I hope the post returns the code "([^"]*)" and save the results in "([^"]*)"$/) do |code, file|
   Payment.new.parse_Json(code, file)
 end
