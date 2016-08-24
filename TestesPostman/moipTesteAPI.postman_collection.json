@@ -1,0 +1,286 @@
+{
+	"variables": [],
+	"info": {
+		"name": "moipTesteAPI",
+		"_postman_id": "b16d7636-cacd-6858-1886-cc39e360b9fb",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://sandbox.moip.com.br/v2/customers/CUS-JWRXEM5GOOU7",
+			"request": {
+				"url": "https://sandbox.moip.com.br/v2/customers/CUS-JWRXEM5GOOU7",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic MDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDE6QUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQg==",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": "Get de Cliente cadastrado"
+			},
+			"response": []
+		},
+		{
+			"name": "https://sandbox.moip.com.br/v2/customers",
+			"request": {
+				"url": "https://sandbox.moip.com.br/v2/customers",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic MDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDE6QUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQg==",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ownId\": \"xanin_amigao_1212\",\r\n    \"fullname\": \"Jose Silvaa\",\r\n    \"email\": \"jose_silva02@email.com\",\r\n    \"birthDate\": \"1988-12-30\",\r\n    \"taxDocument\": {\r\n      \"type\": \"CPF\",\r\n      \"number\": \"22222222222\"\r\n    },\r\n    \"phone\": {\r\n      \"countryCode\": \"55\",\r\n      \"areaCode\": \"11\",\r\n      \"number\": \"66778899\"\r\n    },\r\n    \"shippingAddress\": {\r\n      \"city\": \"Sao Paulo\",\r\n      \"complement\": \"8\",\r\n      \"district\": \"Itaim\",\r\n      \"street\": \"Avenida Faria Lima\",\r\n      \"streetNumber\": \"2927\",\r\n      \"zipCode\": \"01234000\",\r\n      \"state\": \"SP\",\r\n      \"country\": \"BRA\"\r\n    }\r\n  }"
+				},
+				"description": "Criação de um novo cliente"
+			},
+			"response": []
+		},
+		{
+			"name": "https://sandbox.moip.com.br/v2/customers/CUS-JWRXEM5GOOU7/fundinginstrumentsA",
+			"request": {
+				"url": "https://sandbox.moip.com.br/v2/customers/CUS-JWRXEM5GOOU7/fundinginstruments",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic MDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDE6QUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQg==",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"method\": \"CREDIT_CARD\",\r\n  \"creditCard\": {\r\n    \"expirationMonth\": \"05\",\r\n    \"expirationYear\": \"18\",\r\n    \"number\": \"4012001038443335\",\r\n    \"cvc\": \"123\",\r\n    \"holder\": {\r\n      \"fullname\": \"Jose Silvaa\",\r\n      \"birthdate\": \"1988-12-30\",\r\n      \"taxDocument\": {\r\n        \"type\": \"CPF\",\r\n        \"number\": \"22222222222\"\r\n      },\r\n      \"phone\": {\r\n        \"countryCode\": \"55\",\r\n        \"areaCode\": \"11\",\r\n        \"number\": \"66778899\"\r\n      }\r\n    }\r\n  }\r\n}"
+				},
+				"description": "Adição de um cartão de crédito"
+			},
+			"response": []
+		},
+		{
+			"name": "https://sandbox.moip.com.br/v2/orders",
+			"request": {
+				"url": "https://sandbox.moip.com.br/v2/orders",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic MDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDE6QUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQg==",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"ownId\": \"xanin_amigao_1213\",\r\n  \"amount\": {\r\n    \"currency\": \"BRL\",\r\n    \"subtotals\": {\r\n      \"shipping\": 1000\r\n    }\r\n  },\r\n  \"items\": [\r\n    {\r\n      \"product\": \"Descrição do pedido\",\r\n      \"quantity\": 1,\r\n      \"detail\": \"Mais info...\",\r\n      \"price\": 1000\r\n    }\r\n  ],\r\n  \"customer\": {\r\n    \"ownId\": \"CUS-JWRXEM5GOOU7\",\r\n    \"fullname\": \"Jose Silvaa\",\r\n    \"email\": \"jose_silva02@email.com\",\r\n    \"birthDate\": \"1988-12-30\",\r\n    \"taxDocument\": {\r\n      \"type\": \"CPF\",\r\n      \"number\": \"22222222222\"\r\n    },\r\n    \"phone\": {\r\n      \"countryCode\": \"55\",\r\n      \"areaCode\": \"11\",\r\n      \"number\": \"66778899\"\r\n    },\r\n    \"shippingAddress\": {\r\n      \"street\": \"Avenida Faria Lima\",\r\n      \"streetNumber\": 2927,\r\n      \"complement\": 8,\r\n      \"district\": \"Itaim\",\r\n      \"city\": \"Sao Paulo\",\r\n      \"state\": \"SP\",\r\n      \"country\": \"BRA\",\r\n      \"zipCode\": \"01234000\"\r\n    }\r\n  }\r\n}"
+				},
+				"description": "Adiação de um pedido a um cliente"
+			},
+			"response": []
+		},
+		{
+			"name": "https://sandbox.moip.com.br/v2/orders/ORD-5Y66YFYTCHGS",
+			"request": {
+				"url": "https://sandbox.moip.com.br/v2/orders/ORD-5Y66YFYTCHGS",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic MDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDE6QUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQg==",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": "Pesquisa de um pagamento"
+			},
+			"response": []
+		},
+		{
+			"name": "https://sandbox.moip.com.br/v2/orders?q=jose%20silvaa&filters%3Dstatus%3A%3Ain(PAID%2CWAITING)%7CpaymentMethod%3A%3Ain(CREDIT_CARD%2CBOLETO)%7Camount%3A%3Abt(5000%2C10000)&limit=3&offset=0)))",
+			"request": {
+				"url": "https://sandbox.moip.com.br/v2/orders?q=jose%20silvaa&filters%3Dstatus%3A%3Ain(PAID%2CWAITING)%7CpaymentMethod%3A%3Ain(CREDIT_CARD%2CBOLETO)%7Camount%3A%3Abt(5000%2C10000)&limit=3&offset=0)))",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic MDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDE6QUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQg==",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": "Listagem de todos os pedidos de um cliente"
+			},
+			"response": []
+		},
+		{
+			"name": "https://sandbox.moip.com.br/v2/orders?q=jose%20silvaa&filters%3Dstatus%3A%3Ain(PAID%2CWAITING)%7CpaymentMethod%3A%3Ain(CREDIT_CARD%2CBOLETO)%7Camount%3A%3Abt(5000%2C10000)&limit=3&offset=0)))",
+			"request": {
+				"url": "https://sandbox.moip.com.br/v2/orders?q=jose%20silvaa&filters%3Dstatus%3A%3Ain(PAID%2CWAITING)%7CpaymentMethod%3A%3Ain(CREDIT_CARD%2CBOLETO)%7Camount%3A%3Abt(5000%2C10000)&limit=3&offset=0)))",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic MDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDE6QUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQg==",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": "Listagem de todos os pedidos de um cliente"
+			},
+			"response": []
+		},
+		{
+			"name": "https://sandbox.moip.com.br/v2/orders/ORD-5Y66YFYTCHGS/payments",
+			"request": {
+				"url": "https://sandbox.moip.com.br/v2/orders/ORD-5Y66YFYTCHGS/payments",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic MDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDE6QUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQg==",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"installmentCount\": 1,\r\n  \"delayCapture\": \"PRE_AUTHORIZED\",\r\n  \"fundingInstrument\": {\r\n    \"method\": \"CREDIT_CARD\",\r\n    \"creditCard\": {\r\n        \"hash\": \"j4ctyeEJhXKGC/FpDAcM3+ZWqPQPrtJsmGbRGQ53s7tZO914GTPFdKdv/7ldpCgMIoOjVOdvj7pPtnVetVKL0pklE3iQOBKNWKk+gv3pXk2Qy5nToeCmTMBYjHs19XAN+5bLTyWXayCjADn8eXAyBa4o+7Ud276Un7iDNP0J3DkmwFr1so7wIG3MbEMWWqx+xMonurDN4KZlyljux1Dj0EOg4Lvrv1+35ByZDf/zlA9MlCTjX3YeOOUtGDb1eRbONh/yTga4dVFo/kuTA/hlshH4b46Efgs6zBMO9Zjo98Z4Sxo4sm/fvAIVBaerE0yXyQquLgda9nvR0PTt5DPnYQ==\",\r\n      \"holder\": {\r\n        \"fullname\": \"Jose Portador da Silva\",\r\n        \"birthdate\": \"1988-12-30\",\r\n        \"taxDocument\": {\r\n          \"type\": \"CPF\",\r\n          \"number\": \"33333333333\"\r\n        },\r\n        \"phone\": {\r\n          \"countryCode\": \"55\",\r\n          \"areaCode\": \"11\",\r\n          \"number\": \"66778899\"\r\n        }\r\n      }\r\n    }\r\n  }\r\n}"
+				},
+				"description": "Criação de um pagamento pré-autorizado"
+			},
+			"response": []
+		},
+		{
+			"name": "https://sandbox.moip.com.br/v2/payments/PAY-VZ1HI48256ZX",
+			"request": {
+				"url": "https://sandbox.moip.com.br/v2/payments/PAY-VZ1HI48256ZX",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic MDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDE6QUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQg==",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": "Consulta de um pagamento criado"
+			},
+			"response": []
+		},
+		{
+			"name": "https://sandbox.moip.com.br/v2/payments/PAY-VZ1HI48256ZX/void",
+			"request": {
+				"url": "https://sandbox.moip.com.br/v2/payments/PAY-VZ1HI48256ZX/void",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic MDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDE6QUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQg==",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": "Cancelamento de um pagamento pré-autorizado"
+			},
+			"response": []
+		},
+		{
+			"name": "https://sandbox.moip.com.br/v2/payments/PAY-VZ1HI48256ZX/capture",
+			"request": {
+				"url": "https://sandbox.moip.com.br/v2/payments/PAY-VZ1HI48256ZX/capture",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic MDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDEwMTAxMDE6QUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQkFCQUJBQg==",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": "Captura de um pagamento pré-autorizado"
+			},
+			"response": []
+		}
+	]
+}

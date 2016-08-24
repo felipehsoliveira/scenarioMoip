@@ -7,7 +7,7 @@ class Payment
 
   def getPayment
     values
-    $response = RestClient.get $url + @endpoint + @id, $headers
+    $response = RestClient.get $url + @endpoint , $headers
   end
 
   def capturePayment
@@ -42,7 +42,7 @@ class Payment
   def values
     @teste = "https://sandbox.moip.com.br/v2/payments/PAY-VZ1HI48256ZX"
     @endpoint = "v2/payments"
-    @id = "/PAY-VZ1HI48256ZX"
+    @id = "/ORD-BLAFYKHPIQ3T"
     @idCap = "PAY-ZJOE0VPNGIM5/capture"
     @val = "{'installmentCount': 1,
     fundingInstrument: {

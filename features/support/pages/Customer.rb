@@ -2,12 +2,15 @@ class Customer
 
   def customer_create
     values
+    RestClient.get 'https://sandbox.moip.com.br/v2/customers', $headers
     $response = RestClient.post $url + @endpoint, @val, $headers
+    binding.pry
   end
 
   def add_card
-    values
-    $response = RestClient.post $url + @endpoint, @val, $headers
+    card
+    binding.pry
+    $response = RestClient.post $url + @endpoint, @values, $headers
   end
 
   def parse_Json(code, file)
@@ -37,79 +40,60 @@ class Customer
   private
 
   def values
-    @fullname = Faker::Name.name
-    field_gsub(@fullname)
-    @email = Faker::Internet.email
-    @ownId = rand(100000..999999).to_s
-    @birthdate = '01-08-1990'
-    @numberCpf = '14040150864'
-    @countryCode = '55'
-    @areaCode = '11'
-    @numberTel = '55555555'
-    @city = 'Sao Paulo'
-    @complement = '8'
-    @district = 'Itaim'
-    @street = 'Avenida Faria Lima'
-    @streetNumber = '297'
-    @zipcode = '01234000'
-    @state = 'SP'
-    @country = 'BRA'
-
-    @endpoint = "v2/customers/"
-    @id = "CUS-48T726N0IGJ9"
-    @val = "{'ownId': '#{@ownId}',
-    'fullname': '#{@fullname}',
-    'email': '#{@email}',
-    'birthdate':'#{@birthdate}',
-    'taxDocument':{
+    @rand = "bolinha_game_1234548"
+    @endpoint = "v2/customers"
+    @val = "{
+    'ownId': 'xanin_amigao_9898',
+    'fullname': 'Jose Silvaa',
+    'email': 'jose_silva02@email.com',
+    'birthDate': '1988-12-30',
+    'taxDocument': {
       'type': 'CPF',
-      'number': '#{@numberCpf}'
+      'number': '22222222222'
     },
-    'phone':{
-      'countryCode':'#{@countryCode}',
-      'areaCode': '#{@areaCode}',
-      'number': '#{@numberTel}'
+    'phone': {
+      'countryCode': '55',
+      'areaCode': '11',
+      'number': '66778899'
     },
-    'shippingAddress':{
-      'city': '#{@city}',
-      'complement':'#{@complement}',
-      'district':'#{@district}',
-      'street':'#{@street}',
-      'streetNumber':'#{@streetNumber}',
-      'zipCode':'#{@zipcode}',
-      'state':'#{@state}',
-      'country':'#{@country}'
+    'shippingAddress': {
+      'city': 'Sao Paulo',
+      'complement': '8',
+      'district': 'Itaim',
+      'street': 'Avenida Faria Lima',
+      'streetNumber': '2927',
+      'zipCode': '01234000',
+      'state': 'SP',
+      'country': 'BRA'
     }
   }"
-
   end
 
-  def field_gsub(var)
-    if var.include?("'")
-      var = var.gsub!("'", "")
-    end
-  end
-=begin
-  def valuesCard
-    @val = "{'method': 'CREDIT_CARD',
-  'creditCard': {
+  def card
+    @idCustomer = "CUS-J8XPHEX6Q1TV"
+    @endpoint = "v2/customers/CUS-6FGFDZ1QROZV"
+    @values = "{
+    'method': 'CREDIT_CARD',
+    'creditCard': {
     'expirationMonth': '05',
     'expirationYear': '18',
-    'number': '5555666677778884',
+    'number': '4012001038443335',
     'cvc': '123',
     'holder': {
-      'fullname': 'Jose Portador da Silva',
+      'fullname': 'Jose Silvaa',
       'birthdate': '1988-12-30',
       'taxDocument': {
         'type': 'CPF',
-        'number': '33333333333'
+        'number': '22222222222'
       },
       'phone': {
         'countryCode': '55',
         'areaCode': '11',
         'number': '66778899'
+      }
+    }
+  }
+}"
 
-    }"
-=end
-
+  end
 end

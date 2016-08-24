@@ -46,21 +46,47 @@ class Order
     @price = "1000"
     @currency = "BRL"
     @shipping = 1000
-    @val = "{'ownId': '#{@ownId}',
-      'amount': {
-        'currency': '#{@currency}',
-        'subtotals': {
-            'shipping' :'#{@shipping}'
-        }
-      },
-      'items': [
-        {
-          'product': '#{@product}',
-          'quantity': '#{@quantity}',
-          'detail': '#{@detail}',
-          'price': '#{@price}'
-        }
-      ]
-    }"
+    @val = "{
+  'ownId': 'seu_identificador_proprio',
+  'amount': {
+    'currency': 'BRL',
+    'subtotals': {
+      'shipping': 1000
+    }
+  },
+  'items': [
+    {
+      'product': 'Descrição do pedido',
+      'quantity': 1,
+      'detail': 'Mais info...',
+      'price': 1000
+    }
+  ],
+  'customer': {
+    'ownId': 'seu_identificador_proprio_de_cliente',
+    'fullname': 'Jose Silva',
+    'email': 'nome@email.com',
+    'birthDate': '1988-12-30',
+    'taxDocument': {
+      'type': 'CPF',
+      'number': '22222222222'
+    },
+    'phone': {
+      'countryCode': '55',
+      'areaCode': '11',
+      'number': '66778899'
+    },
+    'shippingAddress': {
+      'street': 'Avenida Faria Lima',
+      'streetNumber': 2927,
+      'complement': 8,
+      'district': 'Itaim',
+      'city': 'Sao Paulo',
+      'state': 'SP',
+      'country': 'BRA',
+      'zipCode': '01234000'
+    }
+  }
+}"
   end
 end
