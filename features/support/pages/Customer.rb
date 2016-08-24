@@ -40,10 +40,11 @@ class Customer
   private
 
   def values
-    @rand = "bolinha_game_1234548"
+    @rand = rand(1..99999999999999999999)
+    @rand = @rand.to_s
     @endpoint = "v2/customers"
     @val = "{
-    'ownId': 'xanin_amigao_9898',
+    'ownId': '#{@rand}',
     'fullname': 'Jose Silvaa',
     'email': 'jose_silva02@email.com',
     'birthDate': '1988-12-30',
@@ -71,7 +72,7 @@ class Customer
 
   def card
     @idCustomer = "CUS-J8XPHEX6Q1TV"
-    @endpoint = "v2/customers/CUS-6FGFDZ1QROZV"
+    @endpoint = "v2/customers/CUS-6FGFDZ1QROZV/fundinginstruments"
     @values = "{
     'method': 'CREDIT_CARD',
     'creditCard': {
