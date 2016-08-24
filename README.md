@@ -57,7 +57,6 @@
       Para executar os cenários de teste, sera nécessario a alreração de alguns valores: No cenário "Criação de um novo cliente" deverá ser alterado o paramnetro ownId, pois a api não aceita clientes com o mesmo id.
       Já no cenário "Get Cliente cadastrado", devera ser pego o id gerado na requesição anterior(ex:CUS-JWRXEM5GOOU7) e passar esse parametro na url(ex:https://sandbox.moip.com.br/v2/customers/CUS-JWRXEM5GOOU7), assim como no cenário "Adicionando um Cartão de Crédito", onde o id da criação de clientes deve ser adicionado a url (ex:https://sandbox.moip.com.br/v2/customers/CUS-JWRXEM5GOOU7/fundinginstruments).
       No cenário de "Criação de Pagamento", deverá ser passado no corpo da url, o id que foi gerado no cenário de "Adição de um pedido".Já nos cenários: "Consulta de um Pagamento Criado","Captura de um pagamento pré-autorizado" e "Cancelamento de um pagamento pré-autorizado", deverá ser passado o id gerado da requisição anterior(Ex:https://sandbox.moip.com.br/v2/payments/PAY-VZ1HI48256ZX).
-      
     </p>
   
   <h2>Relatório</h2>
